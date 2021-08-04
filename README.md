@@ -11,6 +11,6 @@ This script uses the CoinGecko API, for more informations: <https://github.com/m
 #### Installation
 -----------------
 
-`pip install pycoingecko`
+`pip install -r requirements.txt`
 
 
