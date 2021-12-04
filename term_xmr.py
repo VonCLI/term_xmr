@@ -12,7 +12,7 @@ cg = CoinGeckoAPI()
 def monero_price():
 
     now = datetime.now()
-    print(f"{now:%Y-%m-%d %H:%M:%S}\n")
+    print(f"{now:%Y-%m-%d %H:%M:%S}")
 
     xmrus = cg.get_coins_markets(ids='monero', vs_currency='usd',include_market_cap='True')
     xmrbtc = cg.get_coins_markets(ids='monero', vs_currency='btc')
@@ -37,8 +37,15 @@ def monero_price():
 
         price_eur = i['current_price']
 
-    print(f"{monero}: {price_us} us$ | {price_btc} ₿ | {price_eur} €\nMarket cap: {mkt_cap} us$\nRank: {mcr}")
-    print(f"Supply: {circ_sup}\nVolume/24h: {dayvol} us$\nHigh/24h: {high} us$\nLow/24h: {low} us$")
+    print(f"""
+    {monero}: {price_us} us$ | {price_btc} ₿ | {price_eur} €
+    Market cap: {mkt_cap} us$
+    Rank: {mcr}
+    Supply: {circ_sup}
+    Volume/24h: {dayvol} us$
+    High/24h: {high} us$
+    Low/24h: {low} us$
+    """)
 
 def clear():
     os.system('clear')
