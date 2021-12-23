@@ -3,6 +3,7 @@
 
 import time
 import os
+from termcolor import cprint
 from  pycoingecko import CoinGeckoAPI
 from datetime import datetime
 
@@ -12,7 +13,7 @@ cg = CoinGeckoAPI()
 def monero_price():
 
     now = datetime.now()
-    print(f"{now:%Y-%m-%d %H:%M:%S}")
+    cprint(f"{now:%Y-%m-%d %H:%M:%S}", "red")
 
     xmrus = cg.get_coins_markets(ids='monero', vs_currency='usd',include_market_cap='True')
     xmrbtc = cg.get_coins_markets(ids='monero', vs_currency='btc')
@@ -51,7 +52,10 @@ def clear():
     os.system('clear')
 
 while True:
-
-    monero_price()
-    time.sleep(30)    #results updated each 30 seconds.
-    clear()
+    try:
+        monero_price()
+        time.sleep(30)    #results updated each 30 seconds.
+        clear()
+    except KeyboardInterrupt:
+        cprint(" Exiting ...", "magenta")
+        exit(0)
