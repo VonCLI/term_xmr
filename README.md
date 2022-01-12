@@ -14,3 +14,4 @@ This script uses the CoinGecko API, for more informations: <https://github.com/m
 `pip install -r requirements.txt`
 
 
+![](gif_xmr.gif)
