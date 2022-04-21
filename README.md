@@ -10,7 +10,7 @@ Python3 script to display on a terminal the live price of a cryptocurrency, Mone
 (21/04/22)
 This script allows to check your XMR portfolio in $, ₿, €. Some major coins are added.
 
-[!(pf_xmr_video)]https://raw.githubusercontent.com/s0k3t/term_xmr/main/pf_xmr.mp4
+![](https://raw.githubusercontent.com/s0k3t/term_xmr/main/pf_xmr.mp4)
 
 ### Notes
 ---------
