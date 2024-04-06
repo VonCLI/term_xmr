@@ -52,18 +52,23 @@ def monero_price():
 
 def major():
     btc = cg.get_coins_markets(ids='bitcoin', vs_currency='usd')
+    btceuro = cg.get_coins_markets(ids='bitcoin', vs_currency='eur')
     eth = cg.get_coins_markets(ids='ethereum', vs_currency='usd')
-
+    etheuro = cg.get_coins_markets(ids='ethereum', vs_currency='eur')
     for i in btc:
         bitcoin = i['name']
         btcprice = i['current_price']
+    for i in btceuro:
+        btc_price_e = i['current_price']
     for i in eth:
         ethereum = i['name']
         ethprice = i['current_price']
-        
+    for i in etheuro:
+        eth_price_e = i['current_price']
+
     print(f"""    
-    {bitcoin}:{btcprice} us$
-    {ethereum}: {ethprice} us$
+    {bitcoin}:{btcprice} us$ | {btc_price_e} €
+    {ethereum}: {ethprice} us$ | {eth_price_e} €
     """)
 
 
