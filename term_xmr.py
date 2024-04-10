@@ -3,6 +3,14 @@
 
 import time
 import os
+import logging
+import datetime
+from threading import Thread
+from time import sleep
+from rich import print
+from rich.console import Console
+from rich.table import Table, Column
+from.markdown import Markdown
 from termcolor import cprint
 from  pycoingecko import CoinGeckoAPI
 from datetime import datetime
